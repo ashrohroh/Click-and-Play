@@ -235,27 +235,27 @@ $("#item25").click(function(){
 
 // item 26
 $("#item26").click(function(){
-    $(".item26shape1").toggleClass("rotate180");
+    $(".item26shape1").toggleClass("rotate");
 });
 
-// item27
-var onclick27= true;
-$("#item27").click(function(){
+// // item27
+// var onclick27= true;
+// $("#item27").click(function(){
         
-    if (onclick27==true) {
-       $(".item27shape2").animate({
-         width: '0',
-       },200,function(){});
+//     if (onclick27==true) {
+//        $(".item27shape2").animate({
+//          width: '0',
+//        },200,function(){});
       
-        onclick27=false;
-    }
-    else {
-         $(".item27shape2").animate({
-         width: '100%',
-         },1000,function(){});
-        onclick27=true;
-    }   
-});
+//         onclick27=false;
+//     }
+//     else {
+//          $(".item27shape2").animate({
+//          width: '100%',
+//          },1000,function(){});
+//         onclick27=true;
+//     }   
+// });
 
 // item 27
 $("#item27").click(function(){
