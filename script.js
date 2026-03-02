@@ -235,7 +235,7 @@ $("#item25").click(function(){
 
 // item 26
 $("#item26").click(function(){
-    $(".item26shape1").toggleClass("rotate");
+    $(".item26shape1").toggleClass("rotate180");
 });
 
 // item27
