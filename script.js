@@ -1,83 +1,47 @@
-// when placing mouse over item 2 square, make square decrease and change into a square
+// when clicking over item 2 square, make square decrease and change into a square
 // also making adjustments to the size of the face features on circle 
-$('#item2').mouseover(function(){
-  $('.item2shape1').animate({ 
-    borderRadius:'0px',
-    width: '100px',
-    height:'100px',
-  },500,function(){});
-  
-  $('.mouth').animate({ 
-    width: '20px',
-    left: '40%',
-  },500,function(){});
-  
-  $('.nose').animate({ 
-    width: '10px',
-    height: '10px',
-  },500,function(){});
-    
-  $('.eye1').animate({ 
-  width: '10px',
-  height: '10px',
-  },500,function(){});
-  
-  $('.eye2').animate({ 
-  width: '10px',
-  height: '10px',
-  },500,function(){});
-  
-});  
 
-// when removing mouse from item 2 square, make shape a circle again and increase in size (regular size)
-// also making adjustments to the size of the face features on circle 
-$('#item2').mouseout (function(){
-  $('.item2shape1').animate({
-    borderRadius:'100px',
-    width: '50%',
-    height:'50%',
-  },500,function(){});
-  
-  $('.mouth').animate({ 
-    width: '40%',
-    left: '30%',
-  },500,function(){});
-  
-  $('.nose').animate({ 
-    width: '20px',
-    height: '20px',
-  },500,function(){});
-  
-  $('.eye1').animate({ 
-  width: '15px',
-  height: '15px',
-  },500,function(){});
-  
-  $('.eye2').animate({ 
-   width: '15px',
-  height: '15px',
-  },500,function(){});
-  
+var onclick2= true;
+$("#item2").click(function(){
+        
+    if (onclick2==true) {
+        $(".item2shape1").css('borderRadius', '0px');
+        $(".item2shape1").css('width', '100px');
+        $(".item2shape1").css('height', '100px');
+        $(".mouth").css('width', '20px');
+        $(".mouth").css('left', '40%');
+        $(".nose").css('width', '10px');
+        $(".nose").css('height', '10px');
+        $(".eye1").css('width', '10px');
+        $(".eye1").css('height', '10px');
+        $(".eye2").css('width', '10px');
+        $(".eye2").css('height', '10px');
+        onclick2=false;
+    }
+    else {
+        $(".item2shape1").css('borderRadius', '100px');
+        $(".item2shape1").css('width', '50%');
+        $(".item2shape1").css('height', '50%');
+        $(".mouth").css('width', '40%');
+        $(".mouth").css('left', '30%');
+        $(".nose").css('width', '20px');
+        $(".nose").css('height', '20px');
+        $(".eye1").css('width', '15px');
+        $(".eye1").css('height', '15px');
+        $(".eye2").css('width', '15px');
+        $(".eye2").css('height', '15px');
+        onclick2=true;
+    } 
 });
 
-// when hovering over item 3 make item 4 square wider and have larger margins in between
-$('#item3').mouseover(function(){
-  $('.item4shape1').animate({
-    width:'100%',
-  },300,function(){});
 
-}); 
-    
-$('#item3').mouseout (function(){
-  $('.item4shape1').animate({
-    width: '20%',
-  },300,function(){});
-}); 
+// item3
 
-// when clicking on item 4 square changing the style of the shapes
-$('#item4').click(function() {
-    $('.item4shape1').toggleClass('onclick');
-}); 
+
+// when clicking on item 4 square changing the width of the items
+$('#item4').click('click touchstart', function(){
+  $('.item').css('width','500px');
+});
 
 // when clicking on item 5 square, making all of the item sqaures black
 $('#item5').click('click touchstart', function(){
@@ -110,6 +74,7 @@ $(document).ready(function(){
 
 // keeps on giving image over and over again when clicked
 $("#present").click(function(){
+  // $("#present").toggleClass('hide');
   $("#present").hide();
 });
 
@@ -120,21 +85,6 @@ $('.item12shape1').click(function() {
     $(".item").fadeOut(200).fadeIn(200).fadeOut(200).fadeIn(200);
 }); 
 
-
-/* item 14 - When I mouse over the box's corners are rounded */
-  $('#item14').mouseover(function(){
-  $('#item14').animate({
-    borderRadius:"1000px"
-  },100,function(){});
-     
-  }); 
-  
-  $('#item14').mouseout(function(){
-  $('#item14').animate({
-    borderRadius:"0px"
-  },100,function(){});
-     
-  }); 
 
 // when clicking on item 14 shape, shape becomes as big as box
 
@@ -161,33 +111,50 @@ var onclick15= true;
 $("#item15").click(function(){
         
     if (onclick15==true) {
-        $(".item15shape1").css('height', '100px');
-        $(".item15shape1").css('width', '100px');
+       $(".item15shape1").animate({
+         top:'50%',
+         width: '100px',
+       },200,function(){});
+       
         onclick15=false;
     }
     else {
-        $('.item15shape1').css('height', '100%');
-        $('.item15shape1').css('width', '100%');
+         $(".item15shape1").animate({
+         top:'100%',
+         width: '100%',
+           
+         },1000,function(){});
         onclick15=true;
     }   
 });
 
 
+
+
 // when clicking on item 16 square, elongating the width and rotating of the shape
+
 
 var onclick16= true;
 $("#item16").click(function(){
         
     if (onclick16==true) {
-        $(".item16shape1").css('width', '100%');
-  
+       $(".item16shape1").animate({
+         top:'0%',
+         width: '100px',
+       },500,function(){});
+       
         onclick16=false;
     }
     else {
-        $('.item16shape1').css('height', '100%');
+         $(".item16shape1").animate({
+         top:'100%',
+         width: '100%',
+           
+         },500,function(){});
         onclick16=true;
-    } 
+    }   
 });
+
 
 // when clicking on item 17 square, increasing the space between each circle
 var onclick17= true;
@@ -267,15 +234,230 @@ $("#item25").click(function(){
 });
 
 // item 26
+$("#item26").click(function(){
+    $(".item26shape1").toggleClass("rotate");
+});
+
+// item27
+var onclick27= true;
+$("#item27").click(function(){
+        
+    if (onclick27==true) {
+       $(".item27shape2").animate({
+         width: '0',
+       },200,function(){});
+      
+        onclick27=false;
+    }
+    else {
+         $(".item27shape2").animate({
+         width: '100%',
+         },1000,function(){});
+        onclick27=true;
+    }   
+});
+
+// item 27
+$("#item27").click(function(){
+    $(".item27shape1").toggleClass("rotate");
+});
+
+// item 28
+
+var onclick28= true;
+$("#item28").click(function(){
+        
+    if (onclick28==true) {
+       $("#item28").animate({
+         width: '0px',
+         opacity: 0, 
+       },200,function(){});
+        onclick28=false;
+    }
+    else {
+         $("#item28").animate({
+         width: '20%',
+           opacity: 100,
+         },1000,function(){});
+        onclick28=true;
+    }   
+});
+
+// item 29, font size increases
+var onclick29= true;
+$("#item29").click(function(){
+        
+    if (onclick29==true) {
+       $(".container").animate({
+         fontSize: '100px', 
+       },200,function(){});
+        onclick29=false;
+    }
+    else {
+         $(".container").animate({
+           fontSize: '15px', 
+         },1000,function(){});
+        onclick29=true;
+    }   
+});
+
+// item 30, change how columns are organized 
+var onclick30= true;
+$("#item30").click(function(){
+        
+    if (onclick30==true) {
+        $(".container").css('flex-direction', 'column');
+        onclick30=false;
+    }
+    else {
+        $('.container').css('flex-direction', 'row');
+        onclick30=true;
+    } 
+});
+
+
+// item 31, change how columns are organized 
+var onclick31= true;
+$("#item31").click(function(){
+        
+    if (onclick31==true) {
+        $(".container").css('flex-wrap', 'nowrap');
+        onclick31=false;
+    }
+    else {
+        $('.container').css('flex-wrap', 'wrap');
+        onclick31=true;
+    } 
+});
 
 
 
+var onclick32= true;
+$("#item32").click(function(){
+        
+    if (onclick32==true) {
+         $(".item32shape1").animate({
+         height: '100%', 
+       },200,function(){});
+       $(".item36shape1").animate({
+         height: '100%', 
+       },200,function(){});
+        onclick32=false;
+    }
+    else {
+        $(".item32shape1").animate({
+         height: '0%', 
+       },200,function(){});
+       $(".item36shape1").animate({
+         height: '0%', 
+       },200,function(){});
+        onclick32=true;
+    } 
+});
+
+// item 33
+var onclick33= true;
+$("#item33").click(function(){
+        
+    if (onclick33==true) {
+         $(".item33shape1").animate({
+           width: '100%', 
+           height:'100%',
+       },700,function(){});
+      
+        onclick33=false;
+    }
+    else {
+        $(".item33shape1").animate({
+         width: '100px', 
+         height:'100px',
+       },700,function(){});
+      
+        onclick33=true;
+    } 
+});
+
+
+var onclick34= true;
+$("#item34").click(function(){
+        
+    if (onclick34==true) {
+         $(".item34shape1").animate({
+           width: '30%', 
+           height:'100%',
+       },700,function(){});
+      
+        onclick34=false;
+    }
+    else {
+        $(".item34shape1").animate({
+         width: '100%', 
+         height:'30%',
+       },700,function(){});
+      
+        onclick34=true;
+    } 
+});
+
+
+var onclick35= true;
+$("#item35").click(function(){
+        
+    if (onclick35==true) {
+         $(".item35shape1").animate({
+           width: '100%', 
+           height:'100%',
+       },100,function(){});
+        $(".item36shape1").animate({
+           opacity: '0',
+          width:'100%',
+       },100,function(){});
+        onclick35=false;
+    }
+    else {
+        $(".item35shape1").animate({
+         width: '50%', 
+         height:'50%',
+       },100,function(){});
+       $(".item36shape1").animate({
+           opacity: '100',
+       },100,function(){});
+      
+        onclick35=true;
+    } 
+});
+
+
+var onclick36= true;
+$("#item36").click(function(){
+        
+    if (onclick36==true) {
+         $(".item36shape2").animate({
+          opacity:'0',
+       },100,function(){});
+        onclick36=false;
+    }
+    else {
+        $(".item36shape2").animate({
+         opacity:'100',
+       },100,function(){});
+        onclick36=true;
+    } 
+});
 
 
 
+$('#item37').click('click touchstart', function(){
+  $('.item37shape1').toggleClass('skew37');
+});
 
+$('#item39').click('click touchstart', function(){
+  $('.item').toggleClass('rotate39');
+});
 
-
+$('#item40').click('click touchstart', function(){
+  $('.item').toggleClass('borderchange');
+});
 
 
 
